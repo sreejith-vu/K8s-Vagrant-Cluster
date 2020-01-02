@@ -69,20 +69,36 @@ Vagrant.configure("2") do |config|
   # SHELL
   #
 
+###For First Cluster
   #Create master_node
-  config.vm.define "master" do |master|
-  master.vm.hostname = "kube-master"
-  master.vm.network "private_network", ip: "192.168.50.10"
+  config.vm.define "master01" do |master01|
+  master01.vm.hostname = "kube-master01"
+  master01.vm.network "private_network", ip: "192.168.50.10"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = "2048"
+    v.cpus = "2"
+  end
   end
   #Create node01
   config.vm.define "node01" do |node01|
   node01.vm.hostname = "kube-node01"
   node01.vm.network "private_network", ip: "192.168.50.11"
   end
+
+###For Second Cluster
+  #Create master02
+  config.vm.define "master02" do |master02|
+  master02.vm.hostname = "kube-master02"
+  master02.vm.network "private_network", ip: "192.168.50.20"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = "2048"
+    v.cpus = "2"
+  end
+  end
   #Create node02
   config.vm.define "node02" do |node02|
   node02.vm.hostname = "kube-node02"
-  node02.vm.network "private_network", ip: "192.168.50.12"
+  node02.vm.network "private_network", ip: "192.168.50.21"
   end
 
 end
