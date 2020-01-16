@@ -7,7 +7,7 @@ sudo vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
 Environment="KUBELET_EXTRA_ARGS=--node-ip=192.168.50.10"
 
-> sudo echo "Environment="KUBELET_EXTRA_ARGS=--node-ip=$(ifconfig |grep -A1 eth1 | grep inet | awk '{print $2}')"" >> /etc/systemd/system/kubelet.service.d/10-kubeadm.conf && sudo systemctl daemon-reload && sudo systemctl restart kubelet
+sudo echo "Environment="KUBELET_EXTRA_ARGS=--node-ip=$(ifconfig |grep -A1 eth1 | grep inet | awk '{print $2}')"" >> /etc/systemd/system/kubelet.service.d/10-kubeadm.conf && sudo systemctl daemon-reload && sudo systemctl restart kubelet
 
 sysctl net.bridge.bridge-nf-call-iptables=1
 
