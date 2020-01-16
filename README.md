@@ -1,7 +1,7 @@
 # K8s-Vagrant-Cluster
 Vagrant | Kubernetes | Kubeadm
 
-## On All Nodes Including Master
+### On All Nodes Including Master
 
 sudo vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
@@ -11,7 +11,7 @@ sudo echo "Environment="KUBELET_EXTRA_ARGS=--node-ip=$(ifconfig |grep -A1 eth1 |
 
 sysctl net.bridge.bridge-nf-call-iptables=1
 
-## Only in Master
+### Only in Master
 sudo kubeadm init --apiserver-advertise-address=192.168.50.10 --apiserver-cert-extra-sans=192.168.50.10 --node-name kube-master01 --pod-network-cidr=10.244.0.0/16
 
 mkdir -p $HOME/.kube
