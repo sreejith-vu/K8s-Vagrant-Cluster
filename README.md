@@ -1,4 +1,4 @@
-# K8s-Vagrant-Cluster
+# k8s-vagrant-cluster
 Vagrant | Kubernetes | Kubeadm
 
 ### On All Nodes Including Master
