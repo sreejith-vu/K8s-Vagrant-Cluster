@@ -12,7 +12,7 @@
 
 5. Install mysql in `test_instance` and create one sample database named `mydb`. Only MySQL and SSH port should be accessible from `bastion_host`.
 
-7. Write terraform script to spin up the above infra structure.
+7. Take AMI of all instances and write terraform script to spin up the above infra structure.
 
 8. Write anisble playbook to install the applications on `nginx_server` and `test_instance`. Also update below code in my.cnf.
 ```
