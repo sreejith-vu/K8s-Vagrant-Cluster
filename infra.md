@@ -10,11 +10,13 @@
 
 6. Create a ec2 instance named `bastion_host` in public subnet and `test_instance` in private subnet. Make passwordless authentication between root user of both servers. 
 
-5. Install mysql in `test_instance` and create one sample database named `mydb`. Only MySQL and SSH port should be accessible from `bastion_host`.
+7. Install mysql in `test_instance` and create one sample database named `mydb`. Only MySQL and SSH port should be accessible from `bastion_host`.`bastion_host`
 
-7. Take AMI of all instances and write terraform script to spin up the above infra structure.
+8. Attach EBS of `20GB` to `test_instance` and move datadir of mysql to newly attached partition.
 
-8. Write anisble playbook to install the applications on `nginx_server` and `test_instance`. Also update below code in my.cnf.
+9. Take AMI of all instances and write terraform script to spin up the above infra structure.
+
+10. Write anisble playbook to install the applications on `nginx_server` and `test_instance`. Also update below code in my.cnf.
 ```
 [client-test]
 port    = 3306
