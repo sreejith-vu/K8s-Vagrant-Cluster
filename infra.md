@@ -4,7 +4,7 @@
 
 3. Create VPC `dev_vpc` `10.0.0.0/16` and create one public `dev_public_subnet 10.0.2.0/16` and private `dev_private_subnet 10.0.3.0/16` subnet.
 
-4. Create a ec2 instance named `nginx_server` in public subnet and install nginx. Index page should be accessible via public dns.
+4. Create a ec2 instance named `nginx_server` in public subnet and install nginx. Index page should be accessible via public dns. Also create new security group named `dev_sg` for the instances.
 
 5. Make the IP address of ec2 static.
 
