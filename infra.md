@@ -1,6 +1,6 @@
-1. Create IAM role and attach the administrator policy to it.
+1. Create new iam user `aws-admin` and attach the administrator policy to it.
 
-2. Login to new user.
+2. Login with `aws-admin`.
 
 3. Create VPC `dev_vpc` `10.0.0.0/16` and create one public `dev_public_subnet 10.0.2.0/16` and private `dev_private_subnet 10.0.3.0/16` subnet.
 
